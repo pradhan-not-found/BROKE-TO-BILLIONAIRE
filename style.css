@@ -46,7 +46,6 @@ img {
     overflow: hidden;
 }
 
-/* FIX 1: Removes the outer gap */
 .what-we-do-section {
     padding-bottom: 0;
 }
@@ -225,7 +224,7 @@ img {
 
 .social-sidebar a {
     font-size: 1.5rem;
-    color: var(--primary-white); /* Default color (for black bg) */
+    color: var(--primary-white); 
     transition: color 0.4s ease, transform 0.3s ease;
 }
 
@@ -234,9 +233,8 @@ img {
     transform: scale(1.2);
 }
 
-/* Class added by JavaScript on scroll */
 .social-sidebar.scrolled a {
-    color: var(--primary-black); /* Scrolled color (for yellow bg) */
+    color: var(--primary-black); 
 }
 .social-sidebar.scrolled a:hover {
     color: var(--primary-black);
@@ -244,7 +242,7 @@ img {
 }
 
 /* ------------------------- */
-/* --- 1. Hero Section --- */
+/* --- 1. Hero Section (Static Background) --- */
 /* ------------------------- */
 .hero {
     min-height: 100vh;
@@ -253,22 +251,27 @@ img {
     justify-content: center;
     align-items: flex-start;
     text-align: left;
+    background-color: var(--primary-black); 
+    color: var(--primary-white); 
+    position: relative; 
+    overflow: hidden; 
 }
 
 .hero .container {
-    max-width: 900px; /* Constrain text width */
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
+    position: relative; 
+    z-index: 2; 
 }
 
 .hero .main-headline {
-    font-size: 3.5rem; /* <-- Smaller size */
+    font-size: 3.5rem; 
     font-weight: 900;
     color: var(--primary-white);
     line-height: 1.2;
     margin-bottom: 20px;
 }
-/* Highlight "Billion-Dollar Dreams" */
 .hero .main-headline span {
     color: var(--primary-yellow);
 }
@@ -315,14 +318,12 @@ img {
 .what-we-do-layout {
     display: flex;
     justify-content: center;
-    /* align-items: center; <-- REMOVED this to stop vertical centering */
     flex-wrap: wrap;
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
     z-index: 5;
-    /* padding-bottom: 100px; <-- REMOVED this internal gap */
 }
 
 .what-we-do-column {
@@ -352,7 +353,7 @@ img {
 .what-we-do-card-new .icon {
     font-size: 2rem;
     color: var(--primary-black);
-    width: 40px; /* Give icon a fixed width */
+    width: 40px; 
     text-align: center;
 }
 
@@ -364,7 +365,7 @@ img {
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 3px;
-    color: var(--primary-black); /* Explicitly set color */
+    color: var(--primary-black); 
 }
 
 .what-we-do-card-new .card-tagline {
@@ -377,7 +378,7 @@ img {
     flex: 1;
     min-width: 280px;
     max-width: 380px; 
-    align-self: flex-end; /* <-- CHANGED this to push image to the bottom */
+    align-self: flex-end; 
     position: relative;
     z-index: 10;
 }
@@ -399,28 +400,27 @@ img {
     overflow: hidden;
     border: 1px solid #222;
     transition: transform 0.3s ease;
-    display: flex; /* Added for better content alignment */
-    flex-direction: column; /* Stack image and content */
+    display: flex; 
+    flex-direction: column; 
 }
 .project-card:hover {
     transform: translateY(-10px);
 }
 
-/* UPDATED Image style for team photos in project cards */
 .project-card .team-project-img {
     width: 100%;
-    height: 250px; /* Adjust height as needed */
-    object-fit: contain; /* Shows the whole image, might add bars */
-    background-color: var(--dark-gray); /* Background for contain */
-    padding: 15px; /* Add some padding around the image */
+    height: 250px; 
+    object-fit: contain; 
+    background-color: var(--dark-gray); 
+    padding: 15px; 
 }
 
 .project-card-content {
     padding: 25px;
-    flex-grow: 1; /* Allows content to fill space */
+    flex-grow: 1; 
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Pushes status to bottom */
+    justify-content: space-between; 
 }
 .project-card p {
     font-size: 0.9rem;
@@ -431,17 +431,15 @@ img {
     color: var(--primary-white);
 }
 
-/* New style for the Coming Soon text */
 .coming-soon-text {
-    margin-top: 15px; /* Add space above status */
-    color: var(--primary-yellow); /* Highlight status */
+    margin-top: 15px; 
+    color: var(--primary-yellow); 
     font-weight: 700;
 }
 
-/* New style for hover effect on coming soon cards */
 .coming-soon-card:hover {
-     transform: none; /* Disable lift effect */
-     cursor: default; /* Change cursor */
+     transform: none; 
+     cursor: default; 
 }
 
 /* ------------------------- */
@@ -470,8 +468,6 @@ img {
 
 .video-card img {
     width: 100%;
-    /* REMOVED: height: 180px; */
-    /* REMOVED: object-fit: cover; */
     display: block;
 }
 
@@ -487,7 +483,7 @@ img {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Will cover the whole card now */
+    height: 100%; 
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
@@ -507,17 +503,17 @@ img {
 
 /* --- 8. Our Team --- */
 .team-card {
-    background-color: var(--dark-gray); /* Changed to dark gray */
+    background-color: var(--dark-gray); 
     padding: 30px;
     border-radius: 12px;
-    /* Removed box-shadow, less visible on dark */
     text-align: center;
     transition: transform 0.3s ease;
-    border: 1px solid #333; /* Added subtle border */
+    border: 1px solid #333; 
+    position: relative; /* ADDED: This is crucial for positioning the icon */
 }
 .team-card:hover {
     transform: translateY(-10px);
-     border-color: var(--primary-yellow); /* Highlight border on hover */
+     border-color: var(--primary-yellow); 
 }
 .team-card img {
     width: 120px;
@@ -525,30 +521,55 @@ img {
     border-radius: 50%;
     object-fit: cover;
     margin: 0 auto 15px auto;
-    border: none; /* <-- This line removes the border */
+    border: none; 
 }
 
 .team-card h3 {
-     color: var(--primary-white); /* Changed heading to white */
+     color: var(--primary-white); 
 }
 .team-card .team-title {
     font-weight: 700;
-    color: var(--light-gray); /* Changed to light gray */
+    color: var(--light-gray); 
     margin-top: 5px;
 }
 .team-card .team-role {
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--primary-black); /* Role text black */
-    background-color: var(--primary-yellow); /* Role background yellow */
+    color: var(--primary-black); 
+    background-color: var(--primary-yellow); 
     display: inline-block;
     padding: 2px 8px;
     border-radius: 4px;
     margin-bottom: 10px;
 }
 .team-card p {
-    color: var(--light-gray); /* Changed paragraph text to light gray */
+    color: var(--light-gray); 
 }
+
+/* NEW: Styles for the LinkedIn icon */
+.linkedin-icon {
+    position: absolute;
+    top: 15px; /* Adjust as needed for vertical position */
+    right: 15px; /* Adjust as needed for horizontal position */
+    font-size: 1.5rem; /* Icon size */
+    color: var(--primary-yellow); /* Icon color */
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent dark background */
+    padding: 8px;
+    border-radius: 50%; /* Make it circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Fixed width */
+    height: 40px; /* Fixed height */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1; /* Ensure it's above other card content if needed */
+}
+
+.linkedin-icon:hover {
+    background-color: var(--primary-black); /* Darker on hover */
+    transform: scale(1.1);
+}
+
 
 /* ------------------------- */
 /* --- 9. Contact Us --- */
